@@ -15,6 +15,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background 0.3s ease;
         }
 
         h1 {
@@ -92,10 +93,15 @@
             margin-top: 20px;
         }
 
+        /* Gradient Background for the Events Tab */
+        .tab-content#events-content.active {
+            background: linear-gradient(to bottom, #a0c8f0, #d3e7f9);
+        }
+
     </style>
 </head>
 <body>
-    <h1>Your Upcoming Google Calendar List</h1>
+    <h1>MediCal</h1>
 
     <div class="tabs">
         <button class="tab-button active" id="events-tab">Events List</button>
@@ -136,6 +142,7 @@
             calendarContent.classList.remove('active');
             eventsTab.classList.add('active');
             calendarTab.classList.remove('active');
+            document.body.style.background = "linear-gradient(to bottom, #a0c8f0, #d3e7f9)";
         });
 
         calendarTab.addEventListener('click', function() {
@@ -143,6 +150,7 @@
             calendarContent.classList.add('active');
             eventsTab.classList.remove('active');
             calendarTab.classList.add('active');
+            document.body.style.background = "#f4f8fb"; // Reset background for calendar tab
         });
     </script>
 </body>
