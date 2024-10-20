@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Google Calendar Events</title>
+</head>
+<body>
+    <h1>Your Upcoming Google Calendar Events</h1>
+    <a href="{{ url_for('index') }}">
+        <button>Go to Homepage</button>
+    </a>
+
+    {% if events %}
+        <ul>
+            {% for event in events %}
+                <li>
+                    <strong>{{ event['summary'] }}</strong><br>
+                    {{ event['start'].get('dateTime', event['start'].get('date')) }}<br>
+                    Location: {{ event.get('location', 'No location provided') }}<br>
+                    Description: {{ event.get('description', 'No description available') }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No upcoming events found.</p>
+    {% endif %}
+</body>
+</html>
