@@ -1,2 +1,0 @@
-# Designathon
-stinky poop oo
