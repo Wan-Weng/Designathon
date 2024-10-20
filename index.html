@@ -12,19 +12,15 @@
             box-sizing: border-box;
         }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
         /* Navbar Styling */
         .navbar {
             display: flex;
             justify-content: flex-start; /* Align items to the left */
             align-items: center;
             padding: 20px;
-            background-color: #a3c9f1; /* Pale Blue */
+            background-color: #4b6d8c; /* Lighter Navy Blue */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease; /* Smooth transition for hiding */
         }
 
             /* Hamburger Styling */
@@ -66,8 +62,8 @@
 
             /* Call to Action Button */
             .navbar .cta-btn a {
-                padding: 10px 20px;
-                background-color: #a0c8f0; /* Lighter Blue */
+                padding: 10px 10px; /* Keep height but reduce width padding */
+                background-color: #a0c8f0; /* Pale Blue */
                 color: #fff;
                 text-decoration: none;
                 border-radius: 5px;
@@ -78,27 +74,31 @@
                     background-color: #8bb8e0; /* Slightly darker pale blue on hover */
                 }
 
+            /* Adjust gap and position of the navigation links */
+            /* Adjust gap and position of the navigation links */
+            .navbar .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 20px; /* Gap between links */
+                margin-left: auto; /* This pushes the links to the right */
+            }
+
+
+
+
+
         /* Hero Section */
         .hero {
             position: relative;
             height: 100vh;
-            background: url('https://foundever.com/wp-content/uploads/2023/01/Healthcare-industry-banner-1400x800-1.jpg') no-repeat center center/cover; /* Background image */
+            background: linear-gradient(to bottom, #a0c8f0, #ffffff); /* Gradient from pale blue to bright white */
         }
 
-            .hero .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            }
-
             .hero .hero-text {
-                position: relative;
-                top: 50%;
+                position: absolute;
+                top: 200%; /* Push text down 200% */
                 left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translateX(-50%);
                 color: #fff;
                 text-align: center;
             }
@@ -113,26 +113,20 @@
                     margin-bottom: 30px;
                 }
 
+            /* Adjust the Login Button */
             .hero .btn {
-                padding: 15px 30px;
-                background-color: #a0c8f0; /* Lighter Blue */
+                padding: 10px 20px; /* Smaller padding for the button */
+                background-color: #a0c8f0; /* Pale Blue */
                 color: white;
                 text-decoration: none;
                 border-radius: 5px;
-                font-size: 18px;
+                font-size: 16px; /* Slightly smaller text */
+                transition: background-color 0.3s ease;
             }
 
                 .hero .btn:hover {
                     background-color: #8bb8e0; /* Slightly darker pale blue on hover */
                 }
-
-        /* About Us Section */
-        #about-us {
-            height: 500px;
-            background-color: #f0f0f0;
-            padding: 50px;
-            text-align: center;
-        }
 
         /* Responsive Styling for Hamburger Menu */
         @media (max-width: 768px) {
@@ -140,7 +134,7 @@
                 display: none;
                 width: 100%;
                 flex-direction: column;
-                background-color: #a3c9f1; /* Pale Blue */
+                background-color: #4b6d8c; /* Lighter Navy Blue */
                 position: absolute;
                 top: 60px;
                 right: 0;
@@ -166,9 +160,9 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <!-- Hamburger Menu -->
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
@@ -181,7 +175,7 @@
 
         <!-- Navigation Links -->
         <ul class="nav-links">
-            <li><a href="#about-us">About us</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Reviews</a></li>
             <li><a href="#">FAQ</a></li>
         </ul>
@@ -194,28 +188,14 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="overlay">
-            <div class="hero-text">
-                <h1>Welcome to MediCal!</h1>
-                <p>Press Login to link your Gmail to your Google Calendar.</p>
-                <a href="{{ url_for('authorize') }}" class="btn">Login</a> <!-- Link to Google Calendar authorization -->
-            </div>
+        <div class="hero-text">
+            <h1>Welcome to MediCal!</h1>
+            <p>Press Login to link your Gmail to your Google Calendar.</p>
+            <a href="{{ url_for('authorize') }}" class="btn">Login</a> <!-- Link to Google Calendar authorization -->
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about-us">
-        <h2>About Us</h2>
-        <p>We are MediCal, dedicated to connecting you with health management solutions through seamless integration with Google Calendar. Our mission is to make healthcare scheduling easier and more accessible for everyone.</p>
-    </section>
-
-    <script>
-        // Function to toggle the hamburger menu visibility
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
-
 </body>
 </html>
+
+
