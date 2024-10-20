@@ -8,6 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
 
+    <!-- Import Dancing Script font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,15 +18,17 @@
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background 0.3s ease;
         }
 
         h1 {
+            font-family: 'Dancing Script', cursive; /* Apply Dancing Script font */
             background-color: #a0c8f0;
             color: #fff;
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 50px;
         }
 
         /* Tab Styling */
@@ -92,15 +97,20 @@
             margin-top: 20px;
         }
 
+        /* Gradient Background for the Events Tab */
+        .tab-content#events-content.active {
+            background: linear-gradient(to bottom, #a0c8f0, #d3e7f9);
+        }
+
     </style>
 </head>
 <body>
-    <h1>Your Upcoming Google Calendar List</h1>
+    <h1>MediCal</h1>
 
     <div class="tabs">
         <button class="tab-button active" id="events-tab">Events List</button>
         <button class="tab-button" id="calendar-tab">Calendar</button>
-        <button class="tab-button" id="ai-tab">Ai</button>
+	<button class="tab-button" id="ai-tab">Ai</button>
     </div>
 
     <div id="events-content" class="tab-content active">
@@ -123,7 +133,7 @@
     <div id="calendar-content" class="tab-content">
         <div data-tockify-component="calendar" data-tockify-calendar="calendar222"></div>
         <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
-    </div>
+    </div>	
 
     <div id="ai-content" class="tab-content">
         <iframe src="https://www.chatbase.co/chatbot-iframe/MIdmNSYCMAkVPcukuHjoF"
@@ -161,8 +171,8 @@
             eventsTab.classList.add('active');
             calendarTab.classList.remove('active');
             aiTab.classList.remove('active');
+            document.body.style.background = "linear-gradient(to bottom, #a0c8f0, #d3e7f9)";
         });
-        
 
         calendarTab.addEventListener('click', function() {
             eventsContent.classList.remove('active');
@@ -171,15 +181,16 @@
             eventsTab.classList.remove('active');
             calendarTab.classList.add('active');
             aiContent.classList.remove('active');
+            document.body.style.background = "#f4f8fb"; // Reset background for calendar tab
         });
-
-        aiTab.addEventListener('click', function() {
+aiTab.addEventListener('click', function() {
             eventsContent.classList.remove('active');
             calendarContent.classList.remove('active');
             aiContent.classList.add('active');
             eventsTab.classList.remove('active');
             calendarTab.classList.remove('active');
             aiContent.classList.add('active');
+            document.body.style.background = "#f4f8fb"; // Reset background for ai tab
         });
     </script>
 </body>
