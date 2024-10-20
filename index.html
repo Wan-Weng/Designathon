@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
 
-    <!-- Include Google Fonts for Cursive Font -->
+    <!-- Include Google Fonts for Cursive Font and Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         /* General Reset */
@@ -25,7 +26,7 @@
             background-color: #4b6d8c; /* Lighter Navy Blue */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: top 0.3s ease; /* Smooth transition for hiding */
-            font-family: 'Dancing Script', cursive; /* Apply cursive font */
+            font-family: 'Dancing Script', cursive; /* Apply Inter font */
         }
 
         /* Hamburger Styling */
@@ -61,7 +62,7 @@
         }
 
         .navbar .nav-links li a {
-            font-family: 'Dancing Script', cursive; /* Cursive font */
+            font-family: 'Dancing Script', cursive; /* Inter font */
             text-decoration: none;
             color: #fff; /* White links */
             font-size: 30px;
@@ -69,7 +70,7 @@
 
         /* Call to Action Button */
         .navbar .cta-btn a {
-            font-family: cursive; /* Cursive font */
+            font-family: 'Dancing Script', cursive; /* Inter font */
             padding: 10px 10px; /* Keep height but reduce width padding */
             background-color: #a0c8f0; /* Pale Blue */
             color: #fff;
@@ -161,6 +162,53 @@
                 margin-left: 0; /* No margin on mobile */
             }
         }
+
+        /* About Us Section */
+        #about-us {
+            text-align: center; /* Center the text */
+            font-weight: bold; /* Make the text bold */
+            color: #a0c8f0; /* Pale blue text */
+            padding: 40px 20px; /* Add some padding around the section */
+            margin-bottom: 40px; /* Add gap below the section */
+            background-color: white; /* White background */
+        }
+
+        #about-us h2 {
+            font-size: 50px; /* Larger font size for the heading */
+        }
+
+        #about-us p {
+            font-family: 'Inter', sans-serif; /* Inter font */
+            font-size: 28px; /* Larger font size for the paragraph */
+            margin-bottom: 20px; /* Space between the paragraph and the next line */
+            font-weight: normal; /* Unbold the text */
+        }
+
+        #about-us .credits {
+            font-size: 24px; /* Slightly smaller font size for credits */
+            font-weight: normal; /* Normal weight for the credits */
+            margin-bottom: 30px; /* Space below the credits */
+        }
+
+        /* What is MediCal Section */
+        #what-is-mediCal {
+            text-align: center; /* Center the text */
+            font-weight: bold; /* Make the text bold */
+            color: #a0c8f0; /* Pale blue text */
+            padding: 40px 20px; /* Add padding */
+            background-color: white; /* White background */
+            margin-bottom: 40px; /* Medium gap between sections */
+        }
+
+        #what-is-mediCal h2 {
+            font-size: 50px; /* Larger font size for the heading */
+        }
+
+        #what-is-mediCal p {
+            font-family: 'Inter', sans-serif; /* Inter font */
+            font-size: 28px; /* Larger font size for the paragraph */
+            font-weight: normal; /* Unbold the text */
+        }
     </style>
 </head>
 <body>
@@ -181,7 +229,7 @@
 
         <!-- Navigation Links -->
         <ul class="nav-links">
-            <li><a href="#about-us">About us</a></li>
+            <li><a href="#about-us">About Us</a></li>
         </ul>
 
         <!-- Call to Action Button -->
@@ -205,7 +253,14 @@
     <!-- About Us Section -->
     <section id="about-us">
         <h2>About Us</h2>
+        <p class="credits">Caleb Sanciangco, Wan Weng, Kevin Chen, and Jonathan Padron</p>
         <p>We are MediCal, dedicated to connecting you with health management solutions through seamless integration with Google Calendar. Our mission is to make healthcare scheduling easier and more accessible for everyone.</p>
+    </section>
+
+    <!-- What is MediCal Section -->
+    <section id="what-is-mediCal">
+        <h2>What is MediCal?</h2>
+        <p>MediCal is a AI chat bot and calendar to help you keep track of your medical needs.</p>
     </section>
 
     <script>
@@ -215,7 +270,7 @@
             navLinks.classList.toggle('active');
         }
     </script>
-    
+
 </body>
 </html>
 
