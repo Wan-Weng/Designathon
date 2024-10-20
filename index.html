@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
+
+    <!-- Include Google Fonts for Cursive Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
     <style>
         /* General Reset */
         * {
@@ -21,6 +25,7 @@
             background-color: #4b6d8c; /* Lighter Navy Blue */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: top 0.3s ease; /* Smooth transition for hiding */
+            font-family: 'Dancing Script', cursive; /* Apply cursive font */
         }
 
         /* Hamburger Styling */
@@ -37,9 +42,10 @@
             background-color: #fff; /* White bars */
         }
 
-        /* Logo Styling */
+        /* Logo Styling with Cursive Font */
         .navbar .logo a {
-            font-size: 24px;
+            font-family: 'Dancing Script', cursive; /* Cursive font */
+            font-size: 32px;
             font-weight: bold;
             color: #fff; /* White for text */
             text-decoration: none;
@@ -55,6 +61,7 @@
         }
 
         .navbar .nav-links li a {
+            font-family: 'Dancing Script', cursive; /* Cursive font */
             text-decoration: none;
             color: #fff; /* White links */
             font-size: 16px;
@@ -62,6 +69,7 @@
 
         /* Call to Action Button */
         .navbar .cta-btn a {
+            font-family: 'Dancing Script', cursive; /* Cursive font */
             padding: 10px 10px; /* Keep height but reduce width padding */
             background-color: #a0c8f0; /* Pale Blue */
             color: #fff;
@@ -74,17 +82,9 @@
             background-color: #8bb8e0; /* Slightly darker pale blue on hover */
         }
 
-        /* Adjust gap and position of the navigation links */
-        .navbar .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px; /* Gap between links */
-            margin-left: auto; /* This pushes the links to the right */
-        }
-
         /* Apply gradient to the entire body */
         body {
-            min-height: 100vh;
+            min-height: 200vh; /* Extended body height to 200% of the viewport */
             background: linear-gradient(to bottom, #a0c8f0, #d6fffe); /* Light blue to pale blue gradient */
             background-attachment: fixed; /* Keeps the gradient fixed while scrolling */
             margin: 0; /* Remove any default margins */
@@ -93,12 +93,13 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 100vh; /* Full height of the viewport */
+            height: 120vh; /* Hero section height set to 120% of the viewport */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center; /* Ensure text is centered */
             background-color: transparent; /* Make hero background transparent */
+            font-family: 'Dancing Script', cursive; /* Apply cursive font */
         }
 
         /* Hero Text Styling */
@@ -112,6 +113,7 @@
 
         /* Optional: Style for subtext below the heading */
         .hero .hero-text p {
+            font-family: 'Dancing Script', cursive; /* Cursive font */
             color: #fff; /* White text */
             font-size: 24px; /* Smaller font size */
             font-weight: normal; /* Unbold the text */
@@ -120,6 +122,7 @@
 
         /* Call to Action Button Styling */
         .hero .btn {
+            font-family: 'Dancing Script', cursive; /* Cursive font */
             padding: 15px 30px;
             background-color: #a0c8f0; /* Pale blue button */
             color: white;
@@ -162,7 +165,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <!-- Hamburger Menu -->
-        <div class="hamburger">
+        <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
